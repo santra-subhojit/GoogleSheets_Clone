@@ -1,190 +1,109 @@
-# Google Sheets Clone
-
-A web application mimicking the Google Sheets UI and core functionalities. This project focuses on replicating the look and feel of Google Sheets along with key functionalities such as mathematical operations, data quality functions, drag selection, cell formatting, and more.
-
-## Table of Contents
-
-- [Objective](#objective)
-- [Features](#features)
-- [Tech Stack and Data Structures](#tech-stack-and-data-structures)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Commands](#commands)
-- [Testing](#testing)
-- [Bonus Features](#bonus-features)
-- [Evaluation Criteria](#evaluation-criteria)
-- [Contributing](#contributing)
-- [License](#license)
+# Web Application Mimicking Google Sheets
 
 ## Objective
 
-Develop a web application that closely mimics the user interface and core functionalities of Google Sheets. The main focus areas include:
-
-- Mathematical and data quality functions
-- Data entry and validation
-- Key UI interactions (drag selection, cell dependencies, and formatting)
+Develop a web application that closely mimics the user interface and core functionalities of Google Sheets, with a focus on mathematical and data quality functions, data entry, and key UI interactions.
 
 ## Features
 
-1. **Spreadsheet Interface:**
-   - **Google Sheets UI Mimicry:** Closely replicates the visual design, layout, toolbar, formula bar, and cell structure.
-   - **Drag Functions:** Implements drag functionality for cell content, formulas, and multi-cell selections.
-   - **Cell Dependencies:** Formulas reflect and update based on cell dependencies.
-   - **Cell Formatting:** Support for bold, italics, font size, color, and alignment.
-   - **Row/Column Operations:** Ability to add, delete, and resize rows and columns.
+### 1. Spreadsheet Interface
 
-2. **Mathematical Functions:**
-   - **SUM:** Calculates the sum of a range of cells.
-   - **AVERAGE:** Calculates the average of a range of cells.
-   - **MAX:** Returns the maximum value from a range of cells.
-   - **MIN:** Returns the minimum value from a range of cells.
-   - **COUNT:** Counts the number of cells containing numerical values.
+- Mimic Google Sheets UI: Strive for a visual design and layout that closely resembles Google Sheets, including the toolbar, formula bar, and cell structure.
+- Drag Functions: Implement drag functionality for cell content, formulas, and selections to mirror Google Sheets' behavior.
+- Cell Dependencies: Ensure that formulas and functions accurately reflect cell dependencies and update accordingly when changes are made to related cells.
+- Support for basic cell formatting (bold, italics, font size, color).
+- Ability to add, delete, and resize rows and columns.
 
-3. **Data Quality Functions:**
-   - **TRIM:** Removes leading and trailing whitespace from a cell.
-   - **UPPER:** Converts cell text to uppercase.
-   - **LOWER:** Converts cell text to lowercase.
-   - **REMOVE_DUPLICATES:** Removes duplicate rows from a selected range.
-   - **FIND_AND_REPLACE:** Finds and replaces specific text within a range of cells.
+### 2. Mathematical Functions
 
-4. **Data Entry and Validation:**
-   - Supports multiple data types (text, numbers, dates).
-   - Basic validation to ensure numeric cells contain numbers.
+- Implement the following mathematical functions:
+  1. **SUM**: Calculates the sum of a range of cells.
+  2. **AVERAGE**: Calculates the average of a range of cells.
+  3. **MAX**: Returns the maximum value from a range of cells.
+  4. **MIN**: Returns the minimum value from a range of cells.
+  5. **COUNT**: Counts the number of cells containing numerical values in a range.
 
-5. **Data Visualization:**
-   - Charting functionality that visualizes data from selected cells.
+### 3. Data Quality Functions
 
-6. **Persistence:**
-   - Ability to save and load spreadsheets using local storage.
+- Implement the following data quality functions:
+  1. **TRIM**: Removes leading and trailing whitespace from a cell.
+  2. **UPPER**: Converts the text in a cell to uppercase.
+  3. **LOWER**: Converts the text in a cell to lowercase.
+  4. **REMOVE\_DUPLICATES**: Removes duplicate rows from a selected range.
+  5. **FIND\_AND\_REPLACE**: Allows users to find and replace specific text within a range of cells.
 
-7. **Undo/Redo:**
-   - Basic history tracking for reverting changes and reapplying undone actions.
+### 4. Data Entry and Validation
 
-## Tech Stack and Data Structures
+- Allow users to input various data types (numbers, text, dates).
+- Implement basic data validation checks (e.g., ensuring numeric cells only contain numbers).
 
-- **Frontend Framework:** React  
-  _Chosen for its component-based architecture, efficient state management with hooks, and strong community support for building interactive UIs._
+### 5. Testing
 
-- **Charting Library:** Chart.js (via react-chartjs-2)  
-  _Used for creating dynamic data visualizations (charts/graphs) within the spreadsheet._
+- Provide a means for users to test the implemented functions with their own data.
+- Display the results of function execution clearly.
 
-- **Styling:** Custom CSS  
-  _The styling is carefully crafted to mimic Google Sheets with responsive design, custom scrollbars, and smooth transitions._
+### Bonus Features
 
-- **Data Structures:**
-  - **Grid State:**  
-    The spreadsheet grid is stored as an object where each key is in the format "row,col" (e.g., "0,0"). Each cell object contains:
-    - `value`: The current displayed value.
-    - `formula`: The formula used to calculate the value.
-    - `style`: An object for cell styling (font properties, color, alignment, etc.).
-    - `dataType`: The type of data (e.g., "text", "number", "date").  
-    _This structure allows fast lookup and granular updates to individual cells, which is key for managing cell dependencies and efficient rendering._
-
-- **Local Storage:**  
-  Used to persist spreadsheet data across sessions.
-
-- **Version Control:** Git
-
-## Installation
-
-Clone the repository and install dependencies:
-
-```bash
-git clone https://github.com/your-username/google-sheets-clone.git
-cd google-sheets-clone
-npm install
-```
-
-or if you use Yarn:
-
-```bash
-yarn install
-```
-
-## Usage
-
-Start the development server:
-
-```bash
-npm start
-```
-
-or
-
-```bash
-yarn start
-```
-
-Then, open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Commands
-
-- **Start Development Server:**
-  ```bash
-  npm start
-  ```
-- **Build for Production:**
-  ```bash
-  npm run build
-  ```
-- **Run Tests:**
-  ```bash
-  npm test
-  ```
-- **Lint Code:**
-  ```bash
-  npm run lint
-  ```
-
-## Testing
-
-- **Data Entry:**  
-  Enter numbers, text, and dates into cells.
-  
-- **Formulas:**  
-  Use formulas (e.g., `=SUM(A1:A5)`, `=AVERAGE(B1:B5)`) to test mathematical functions.
-  
-- **Formatting:**  
-  Apply bold, italics, underline, font size, color, and alignment using toolbar buttons.
-  
-- **Row/Column Operations:**  
-  Add, delete, and resize rows/columns.
-  
-- **Save/Load:**  
-  Save your spreadsheet to local storage and load it back.
-  
-- **Charts:**  
-  Select cells and click the chart button to view data visualizations.
-
-## Bonus Features
-
-- Additional mathematical and data quality functions.
-- Support for complex formulas with relative and absolute cell references.
-- Enhanced cell dependency management.
-- Undo/Redo functionality.
+- Implement additional mathematical and data quality functions.
+- Add support for more complex formulas and cell referencing (e.g., relative and absolute references).
+- Allow users to save and load their spreadsheets.
+- Incorporate data visualization capabilities (e.g., charts, graphs).
 
 ## Evaluation Criteria
 
-- **UI Fidelity:**  
-  The application’s look and feel closely replicate Google Sheets, including drag selection and cell dependency handling.
+- **Fidelity to Google Sheets UI**: How closely the application's look and feel matches Google Sheets, including drag functions and cell dependency handling.
+- **Functionality and completeness** of the implemented features.
+- **Accuracy** of the mathematical and data quality functions.
+- **Usability and intuitiveness** of the user interface.
+- **Code quality and maintainability**.
+- **Implementation of bonus features**.
+- **README clarity**: Explanation of data structures and tech stack used.
 
-- **Functionality:**  
-  All features—from basic cell editing to advanced formula calculations—should work as expected.
+## Tech Stack
 
-- **Code Quality:**  
-  The code is modular, maintainable, and well-documented.
+- **Frontend**: React.js for dynamic UI and state management.
+- **State Management**: Context API / Redux (if needed for complex state handling).
+- **Styling**: Tailwind CSS / Bootstrap for responsive and aesthetic design.
+- **Charting Library**: React Chart.js for data visualization and graph plotting.
 
-- **Usability:**  
-  The user interface is intuitive, responsive, and accessible.
+## Installation & Setup
 
-- **Bonus Features:**  
-  Extra functionalities (e.g., complex formulas, dynamic charts, save/load) further enhance the user experience.
+1. Clone the repository:
 
-## Contributing
+   ```sh
+   git clone https://github.com/yourusername/your-repo.git
+   cd your-repo
+   ```
 
-Contributions are welcome! Please fork the repository and open a pull request. For major changes, please open an issue first to discuss your ideas.
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Install React Chart.js dependencies:
+
+   ```sh
+   npm install react-chartjs-2 chart.js
+   ```
+
+4. Start the development server:
+
+   ```sh
+   npm start
+   ```
+
+## Dependencies
+
+- **React.js**: Core framework for building UI components.
+- **react-chartjs-2**: React wrapper for Chart.js, used for data visualization.
+- **chart.js**: Library for rendering charts and graphs.
+- **Tailwind CSS / Bootstrap**: For responsive and modern UI design.
+- **React Router**: For navigation within the application.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License.
+
+##
 
